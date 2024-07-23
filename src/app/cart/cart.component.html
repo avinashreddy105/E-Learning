@@ -1,37 +1,42 @@
 <app-header></app-header>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 <div class="text-center my-5" *ngIf=" data.length==0">
     <p>CART EMPTY</p>
     <a routerLink="/services" class="btn btn-info" >Go to product page</a>
 </div>
-<!-- add to cart -->
 <div *ngIf=" data.length>0" class="container" >
     <h1 class="text-center">CART DATA</h1>
-    <table class="table table-bordered table-striped mt-3 ">
-        <thead>
-            <tr class="table-primary">
-                <th>SNO</th>
-                <th>NAME</th>
-                <th>IMG</th>
-                <th>FEE</th>
-                <th>DURATION</th>
-                <th>CONTENT</th>
-                <th style="width: 30%;">ACTION</th>
 
-             </tr>
-        </thead>
-        <tbody class="table">
-            <tr *ngFor="let user of data;let i=index">
-                <td>{{i+1}}</td>
-                <td>{{user.name}}</td>
-                <td><img src="{{user.img}}" alt="" style="height: 100px;width: 100%;;"></td>
-                <td>{{user.fee}}</td>
-                <td>{{user.duration}}</td>
-                <td>{{user.content}}</td>
-                <button class="btn btn-danger fa-solid fa-trash mt-5 ml-4"></button>
-</tr>
-         
-        </tbody>
-            </table>
-     <!-- add to cart -->
+<div class="container  mt-4">
+<div class="row">
+    <div class=" col-md-5"*ngFor="let user of data;let i=index">
+        <div class="card mx-2 mt-3">
+            <!-- ( *ngIf="course.name==='ANGULAR'"||course.name ==='REACT') -->
+            <img class="card-img-top" src="{{user.img}}" alt="Card image cap" style="height: 200px;">
+
+            <div class="card-body">
+                <h4 class="card-title">{{user.name}}</h4>
+                <div class="card-text">
+                    <p>{{user.content}}</p>
+                    <div class="text-center">
+                        <button class="btn   btn-info" >{{user.fee}}</button>
+
+                        <button class="btn btn-primary mx-2" >{{user.duration}}</button>
+                        <div class="card-body text-center">
+                            <div class="container">
+                                <button class="btn btn-success w-100 mt-3" (click)="pay()">
+                                    PAYMENT/-{{user.fee}} </button>
+                            </div>
+                     
+                
+                        
+                    </div>
+    </div> 
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <app-footer></app-footer>

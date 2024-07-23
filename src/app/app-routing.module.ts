@@ -19,6 +19,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { HTMLComponent } from './courses/html/html.component';
 import { CssComponent } from './courses/css/css.component';
 import { JsComponent } from './courses/js/js.component';
+import { PaymentComponent } from './payment/payment.component';
+import { BanktransferComponent } from './banktransfer/banktransfer.component';
 
 // routing concept//
 const routes: Routes = [
@@ -35,6 +37,10 @@ const routes: Routes = [
   { path:"login",component:LoginComponent},
   { path:"cart",component:CartComponent},
   { path:"forgotpassword",component:ForgotpasswordComponent},
+  { path:"payment",component:PaymentComponent},
+  { path:"banktransfer",component:BanktransferComponent},
+
+
 
   // child routing concept
   {path:"courses",component:CoursesComponent,

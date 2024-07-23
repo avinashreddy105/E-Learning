@@ -30,6 +30,8 @@ import { CssComponent } from './courses/css/css.component';
 import { JsComponent } from './courses/js/js.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment } from 'src/environments/environment';
+import { PaymentComponent } from './payment/payment.component';
+import { BanktransferComponent } from './banktransfer/banktransfer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +57,8 @@ import { environment } from 'src/environments/environment';
     HTMLComponent,
     CssComponent,
     JsComponent,
+    PaymentComponent,
+    BanktransferComponent,
     ],
   imports: [
     BrowserModule,
