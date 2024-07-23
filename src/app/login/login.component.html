@@ -1,0 +1,42 @@
+<app-header></app-header>
+<!-- reactive form module  and validations-->
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+         <div class="card-header bg-primary text-white">
+            <h2 class="text-center">LOGIN</h2>
+         </div>
+         <div class="card-body">
+            <form id="login" [formGroup]="loginForm" (submit)="login()" #loginform="ngForm">
+                <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">
+                    EMAIL</label><span class="text-danger">*
+                   </span>
+                    <input type="email" class="form-control" id="email" class="form-control is-invalid" placeholder="Enter Email" name="email"
+                      formControlName="email" [ngClass]="{'is-invalid':isSubmit && f.email.errors}">
+                     <p class="text-danger fw-bold" *ngIf=" isSubmit && f.email.errors">Enter Email</p>
+                   </div>
+                   <div  class="mb-3 mt-3">
+                    <label for="password" class="form-label">
+                    PASSWORD</label><span class="text-danger">*
+                   </span>
+                    <input type="password" class="form-control" class="form-control is-invalid" id="password" placeholder="Enter Password" name="password"
+                      formControlName="password" [ngClass] ="{'is-invalid':isSubmit && f.password.errors}">
+                     <p class="text-danger fw-bold" *ngIf="isSubmit && f.password.errors">Enter Password</p>
+                   </div>
+                   <p><a routerLink="/forgotpassword">Forgot your password?</a></p>
+
+                   <button class="btn btn-primary" [disabled]="loginForm.invalid">LOGIN</button>
+                   <p [ngClass]="clr">{{msg}}</p>
+
+                   <p>you dont have account <a routerLink="/register" class="text-danger text-decoration-none">REGISTER</a></p>
+
+            </form>
+         </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- reactive form module validations -->
+<app-footer></app-footer>

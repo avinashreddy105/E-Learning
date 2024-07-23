@@ -1,0 +1,112 @@
+<app-header></app-header>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col mb-3">
+      <div class="card">
+        <div class="card-header bg-primary text-center text-white"><h4>USERS</h4></div>
+        <div class="card-body">
+<h4>{{dmsg}}</h4>
+    <table class="table table-bordered table-striped mt-3 ">
+<thead>
+    <tr class="table-primary">
+        <th>SNO</th>
+        <th>FNAME</th>
+        <th>LNAME</th>
+        <th>EMAIL</th>
+        <th>PHONE</th>
+        <th>PASSWORD</th>
+        <th style="width: 30%;">ACTION</th>
+     </tr>
+</thead>
+<tbody class="table-success">
+    <tr *ngFor="let user of data;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.user_fname}}</td>
+        <td>{{user.user_lname}}</td>
+        <td>{{user.user_email}}</td>
+        <td>{{user.user_phone}}</td>
+        <td>{{user.user_password}}</td>
+        <td class="text-center" >
+
+          
+        <button class="btn btn-primary me-2 fa-solid fa-pen" (click)="upd(user.user_id)" data-bs-target="#myModal" data-bs-toggle="modal"></button>
+        <button class="btn btn-danger fa-solid fa-trash "(click)="del(user.user_id)"></button>
+
+ </tr>
+ 
+</tbody>
+    </table>
+</div>
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+
+        <div class="modal-header bg-danger">
+          <h4 class="modal-title text-white">UPDATE</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <div class="modal-body">
+            <form id="register" #regform="ngForm">
+                <div class="mb-3 mt-3">
+                    <label class="form-label">
+                    USER ID</label><span class="text-danger">*
+                   </span>
+                    <input type="text" class="form-control" id="uid" placeholder="Enter FirstName"
+                     required  [(ngModel)]="student.uid" name="uid">
+                   </div>
+                <div class="mb-3 mt-3">
+                 <label class="form-label">
+                 FIRSTNAME</label><span class="text-danger">*
+                </span>
+                 <input type="text" class="form-control" id="fname" placeholder="Enter FirstName"
+                  required  [(ngModel)]="student.fname" name="fname" #fname="ngModel" [ngClass]="fname.touched && fname.invalid?
+                  'border border-danger':''">
+                </div>
+                
+                <div class="mb-3 mt-3">
+                    <label class="form-label">
+                   LASTNAME</label><span class="text-danger">*
+                </span> 
+                    <input type="text" class="form-control" id="lname" placeholder="Enter LastNmae"
+                     required   [(ngModel)]="student.lname"  name="lname">
+                   </div>
+                 
+                   <div class="mb-3 mt-3">
+                    <label class="form-label">
+                 EMAIL</label><span class="text-danger">*
+                </span>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email"
+                     required  [(ngModel)]="student.email" name="email" #email="ngModel" [ngClass]="email.touched && email.invalid?
+                     'border border-danger':''">
+                     <p class="text-danger fw-bold" *ngIf="email.touched && email.invalid">Enter Email</p>
+                   </div>
+            
+                   <div class="mb-3 mt-3">
+                    <label class="form-label">
+                    PHONE</label><span class="text-danger">*
+                    </span>
+                    <input type="text" class="form-control" id="Phone" placeholder="Enter Phone"
+                     required  [(ngModel)]="student.phone" name="phone" #phone="ngModel" [ngClass]="phone.touched && phone.invalid?
+                     'border border-danger':''">
+                     <p class="text-danger fw-bold" *ngIf="phone.touched && phone.invalid">Enter phone</p>
+                   </div>
+                 
+
+
+                   <button class="btn btn-success" [disabled]="regform.invalid" (click)="updateuser()">UPDATE</button>
+                   <p [ngClass]="clr">{{umsg}}</p>
+        </form>
+    
+  
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  </div>
+  <app-footer></app-footer>

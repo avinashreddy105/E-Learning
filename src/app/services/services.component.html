@@ -1,0 +1,100 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <h3 class="text-center bg-primary text-white">SERVICES</h3>
+    <div class="row mt-5">
+        <div class=" col-md-4" *ngFor="let course of courses">
+            <!-- NGFOR CONDITION EXAMPLE -->
+            
+            <div class="card" >
+                <!-- ( *ngIf="course.name==='ANGULAR'"||course.name ==='REACT') -->
+                <img class="card-img-top" src="{{course.img}}" alt="Card image cap">
+
+                <div class="card-body">
+                    <h4 class="card-title">{{course.name}}</h4>
+                    <div class="card-text">
+                        <p>{{course.content}}</p>
+                        <div class="text-center">
+                            <button class="btn   btn-info" >{{course.fee}}</button>
+
+                            <button class="btn btn-primary mx-2" >{{course.duration}}</button>
+                        </div>
+                        <button class="btn w-100 btn-danger mt-3" (click)="add(course)">ADD TO CART</button>
+                        <button class="btn w-100 btn-success mt-3" (click)="read()">READ MORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class=" col-md-4">
+            
+            <div class="card" >
+                <img class="card-img-top" src="https://colorlib.com/wp/wp-content/uploads/sites/2/creative-css3-tutorials.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">CSS</h4>
+                    <div class="card-text">
+                        <p>The CSS images module defines the types of images that can be used (the iamge type, containing URLs, gradients and other types of images), how to resize them and how they, and other replaced content, interact with the </p>
+                        <button class="btn btn-primary">FEE:2500</button>
+                        <button class="btn btn-danger mx-2" >DURATION:10HrS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            
+            <div class="card">
+                <img class="card-img-top" src="https://www.tutorialrepublic.com/lib/images/javascript-illustration.png" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">JAVA JS</h4>
+                    <div class="card-text">
+                        <p>JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates.</p>
+                        <button class="btn btn-primary">FEE:5000</button>
+                        <button class="btn btn-danger mx-2" >DURATION:20HS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+
+        <div class=" col-md-4">
+            
+            <div class="card">
+                <img class="card-img-top" src="https://repository-images.githubusercontent.com/314186076/79a18fff-1aeb-4a12-9340-db81b383b5e7" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">ANGULAR</h4>
+                        <p>Angular is an open-source, JavaScript framework written in TypeScript. Google maintains it, and its primary purpose is to develop single-page applications. As a framework, Angular has clear advantages while also providing a standard structure</p>
+                        <button class="btn btn-primary">FEE:10000</button>
+                        <button class="btn btn-danger mx-2" >DURATION:30HRS</button>
+                    </div>
+                </div>
+        </div>
+        <div class=" col-md-4">
+            
+            <div class="card">
+                <img class="card-img-top" src="https://media.licdn.com/dms/image/D4E12AQFAnM7JNyFDQg/article-cover_image-shrink_720_1280/0/1708148800306?e=2147483647&v=beta&t=YVyEgQPbE7DUjDtMEQ5DBs_NUxWX_z6mWn72IqCH03Q" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">REACT</h4>
+                    <div class="card-text">
+                        <p>React is aptly named because: It "reacts" quickly to changes without reloading the whole page. It uses the virtual DOM to efficiently update parts of a webpage. It's built around components that "react" and update.</p>
+                        <button class="btn btn-primary">FEE:10000</button>
+                        <button class="btn btn-danger mx-2" >DURATION:30HrS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            
+            <div class="card">
+                <img class="card-img-top" src="https://positiwise.com/blog/wp-content/uploads/2021/12/node-js-for-software-development-1200x600-1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">JODE JS</h4>
+                    <div class="card-text">
+                        <p>Developers use Node. js to create server-side web applications, and it is perfect for data-intensive applications since it uses an asynchronous, event-driven model. Now that we know what is Node, let's look at why it is so prevalent in web development.</p>
+                        <button class="btn btn-primary">FEE:5000</button>
+                        <button class="btn btn-danger mx-2" >DURATION:15HRS</button>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+<app-footer></app-footer>

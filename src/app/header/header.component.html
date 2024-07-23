@@ -1,0 +1,43 @@
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand " routerLink="/home">
+      <h3 class="container-fl">E-LEARNING</h3></a>
+      <div class="img"><img  src="https://eviet.edu.vn/uploads/57(1)(1).jpg" alt="" routerLink="/home"></div>
+      
+    <!-- Links -->
+    <ul class="navbar-nav ms-auto mb-3 mb-lg-0 ">
+      <ng-container *ngFor="let menu of navs">
+        <li class="nav-item" *ngIf="menu.sub.length==0" >
+          <a class="nav-link" [routerLink]="menu.url" routerLinkActive="active">{{menu.name |uppercase}}</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="menu.sub.length>0">
+          <a class="nav-link dropdown-toggle" [routerLink]="menu.url" role="button" data-bs-toggle="dropdown">{{menu.name|uppercase}}</a>
+          <ul class="dropdown-menu">
+            <li *ngFor="let submenu of menu.sub">
+            <a class="dropdown-item" [routerLink]="submenu.url">{{submenu.name|uppercase}}</a></li>
+          
+            </ul>
+        </li>
+      </ng-container>
+ 
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/about"routerLinkActive="active">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact" routerLinkActive="active">CONTACT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/services" routerLinkActive="active">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/blog" routerLinkActive="active">BLOG</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register" routerLinkActive="active">REGISTER</a>
+      </li> -->
+    </ul>
+    <a class="btn btn-danger mx-2" routerLink="/cart"><i class="fa-solid fa-cart-plus"></i>
+    <span class="badge">{{data.length}}</span></a>
+  </nav>
+  

@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container mt-4">
+      
+  <div class="row">
+    <div class="col-mb-3">
+      <div class="cart">
+        <div class="card-header bg-primary text-center text-white"><h4>PROFILE</h4></div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped mt-3">
+      <thead>
+        <tr class="table-active" >
+          <th>USER ID</th>
+          <th>FNAME</th>
+          <th>LNAME</th>
+          <th>EMAIL</th>
+          <th>PHONE</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-primary">
+          <td>{{userData.user_id}}</td>
+          <td>{{userData.user_fname}}</td>
+          <td>{{userData.user_lname}}</td>
+          <td>{{userData.user_email}}</td>
+          <td>{{userData.user_phone}}</td>
+
+          </tr>
+      </tbody>
+    </table>
+        </div>
+    </div>
+  </div>
+  </div>
+  
+<app-footer></app-footer>

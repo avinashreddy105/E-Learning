@@ -1,0 +1,54 @@
+<app-header></app-header>
+<!-- ngswitch condition -->
+<h2 [ngStyle]="abc" class="mt-3">CHOOSE COLOR</h2>
+<div class="text-center" [ngSwitch]="color |lowercase" >
+    <h1 *ngSwitchCase="'red'" style="color: red;">My fav color red</h1>
+    <h1 *ngSwitchCase="'green'" style="color: green;">My fav color green</h1>
+    <h1 *ngSwitchCase="'blue'" style="color: blue;">My fav color blue</h1>
+    <h1 *ngSwitchCase="'yellow'" style="color: yellow;">My fav color yellow</h1>
+    <h1 *ngSwitchCase="'grey'" style="color: grey;">My fav color grey</h1>
+    <h1 *ngSwitchDefault=>Input wrong</h1><hr>
+    <!-- ngswitch condition -->
+      <!-- [ngStyle] condition -->
+    <h1 [ngStyle]= "qunty ===0 ? red:green">NOT AVAILABLE</h1>
+    <h1 [ngStyle]= "qunty1 >10 ? green:red">AVAILABLE</h1>
+    <h1 [ngClass]="clr">REGISTER SUCCESFULLY</h1><hr>
+     <!-- [ngStyle] condition -->
+
+
+</div>
+ <hr>
+<div class="continer">
+    <h3 class="text-center text-danger">INCREMENT AND DECREMENT</h3>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header bg-primary text-white" >
+                    <h2 class="text-center">counter</h2>
+                </div>
+                <div class="card-body text-center">
+                    <h1>{{counter}}</h1>
+                    <button class="btn btn-primary me-2" (click)="inc()">INCREMENT</button>
+                    <button class="btn btn-danger "(click)="dec()">DECREMENT</button>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- hide and show password -->
+<div class="container">
+    <h2 class="text-center">SHOW AND HIDE PASSWORD</h2>
+  <div class="container mt-5">
+  <form action="">
+      <div class="input-group mb-3">
+          <input [type]="type1" class="form-control" placeholder="Enter Password">
+          <button class="btn btn-primary" type="button" (click)="show()">SHOW</button>
+          <button class="btn btn-danger" type="button" (click)="hide()">HIDE</button>
+        </div>
+  </form>
+  </div>
+  <!-- hide and show password -->
+
+<app-footer></app-footer>

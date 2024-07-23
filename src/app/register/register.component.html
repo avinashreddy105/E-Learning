@@ -1,0 +1,73 @@
+<app-header></app-header>
+<!-- template driven form  and validations-->
+ <div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h1 class="text-center">REGISTER</h1>
+                </div>
+                <div class="card-body">
+                    <form id="register" #regform="ngForm">
+                        <div class="mb-3 mt-3">
+                         <label class="form-label">
+                         FIRSTNAME</label><span class="text-danger">*
+                        </span>
+                         <input type="text" class="form-control" id="fname" placeholder="Enter FirstName"
+                          required  [(ngModel)]="student.fname" name="fname" #fname="ngModel" [ngClass]="fname.touched && fname.invalid?
+                          'border border-danger':''">
+                          <p class="text-danger fw-bold"*ngIf="fname.touched && fname.invalid">Enter Fname</p>
+                        </div>
+                        
+                        <div class="mb-3 mt-3">
+                            <label class="form-label">
+                           LASTNAME</label><span class="text-danger">*
+                        </span> 
+                            <input type="text" class="form-control" id="lname" placeholder="Enter LastNmae"
+                             required [(ngModel)]="student.lname" name="lname" #lname="ngModel" [ngClass]="lname.touched &&lname.invalid
+                             ?'border border-danger':''" >
+                             <p class="text-danger fw-bold" *ngIf="lname.touched && lname.invalid">Enter Lname</p>
+                           </div>
+                         
+                           <div class="mb-3 mt-3">
+                            <label class="form-label">
+                         EMAIL</label><span class="text-danger">*
+                        </span>
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email"
+                             required  [(ngModel)]="student.email" name="email" #email="ngModel" [ngClass]="email.touched && email.invalid?
+                             'border border-danger':''">
+                             <p class="text-danger fw-bold" *ngIf="email.touched && email.invalid">Enter Email</p>
+                           </div>
+                    
+                           <div class="mb-3 mt-3">
+                            <label class="form-label">
+                            PHONE</label><span class="text-danger">*
+                            </span>
+                            <input type="text" class="form-control" id="Phone" placeholder="Enter Phone"
+                             required  [(ngModel)]="student.phone" name="phone" #phone="ngModel" [ngClass]="phone.touched && phone.invalid?
+                             'border border-danger':''">
+                             <p class="text-danger fw-bold" *ngIf="phone.touched && phone.invalid">Enter phone</p>
+                           </div>
+                         
+                           <div class="mb-3 mt-3">
+                            <label class="form-label">
+                            PASSWORD</label><span class="text-danger">*
+                            </span>
+                            <input type="password" class="form-control" id="password" placeholder="Enter Password"
+                             required  [(ngModel)]="student.password" name="password" #password="ngModel" [ngClass]="password.touched && password.invalid?
+                             'border border-danger':''">
+                             <p class="text-danger fw-bold" *ngIf="password.touched && password.invalid">Enter Password</p>
+                           </div>
+                           
+
+                           <button class="btn btn-primary" (click)="reg()" [disabled]="regform.invalid">REGISTER</button>
+                           <p [ngClass]="clr">{{msg}}</p>
+                          <p>Already have an account : <a routerLink="/login" class="text-danger text-decoration-none">LOGIN</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+ <!-- template driven form  and validations-->
+<app-footer></app-footer>

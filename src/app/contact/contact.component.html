@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto  ">
+       
+                <div class="card">
+                    <div class="card-header bg-primary text-center text-white"><h4>CONTACT US</h4></div>
+                    <div class="card-body">
+                        <div class="form-group">
+                          <form (ngSubmit)="submitform()" #contactForm="ngForm">
+
+                            <div class="mb-3 mt-3">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required  class="form-control"  [(ngModel)]="formData.name" #name="ngModel"
+                            [ngClass]="name.touched && name.invalid?'border border-danger':''">
+                            <p class="text-danger fw-bold"*ngIf="name.touched && name.invalid">Enter name</p>
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email"required [(ngModel)]="formData.email"#email="ngModel"
+                             ngClass="email.touched && email.invalid?'border border-danger':''" >
+                             <p class="text-danger fw-bold" *ngIf="email.touched && email.invalid">ENTER EMAIL</p>
+                          </div>
+                          <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5"  required [(ngModel)]="formData.message" #message="ngModel" ngClass="message.touched && message.invalid?'border border-danger':''"></textarea>
+                            <p class="text-danger fw-bold" *ngIf="message.invalid && message.touched">ENTER MESSAGE</p>
+                          </div>
+                          <button class="btn btn-primary mt-3 " type="submit" [disabled]="!contactForm.valid">Submit</button>
+                         </form>   
+                          <div *ngIf= "submitted">
+                            <p class="text-success fw-bold">Thank you for your message {{ formData.name }}!</p>
+                            <p class="text-success fw-bold">We'll get back to you at {{ formData.email }} shortly.</p>
+                          </div>
+                                     </div>
+
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

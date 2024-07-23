@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="text-center my-5" *ngIf=" data.length==0">
+    <p>CART EMPTY</p>
+    <a routerLink="/services" class="btn btn-info" >Go to product page</a>
+</div>
+<!-- add to cart -->
+<div *ngIf=" data.length>0" class="container" >
+    <h1 class="text-center">CART DATA</h1>
+    <table class="table table-bordered table-striped mt-3 ">
+        <thead>
+            <tr class="table-primary">
+                <th>SNO</th>
+                <th>NAME</th>
+                <th>IMG</th>
+                <th>FEE</th>
+                <th>DURATION</th>
+                <th>CONTENT</th>
+                <th style="width: 30%;">ACTION</th>
+
+             </tr>
+        </thead>
+        <tbody class="table">
+            <tr *ngFor="let user of data;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td><img src="{{user.img}}" alt="" style="height: 100px;width: 100%;;"></td>
+                <td>{{user.fee}}</td>
+                <td>{{user.duration}}</td>
+                <td>{{user.content}}</td>
+                <button class="btn btn-danger fa-solid fa-trash mt-5 ml-4"></button>
+</tr>
+         
+        </tbody>
+            </table>
+     <!-- add to cart -->
+</div>
+<app-footer></app-footer>

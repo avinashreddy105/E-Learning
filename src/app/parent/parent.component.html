@@ -1,0 +1,25 @@
+<app-header></app-header>
+<!-- parent to child child to parent -->
+<!-- <div class="container text-center mt-5">
+    <p>parent works!{{msg}}</p>
+<app-child [name1]="obj" (cevent)="receivedata($event)"></app-child>
+</div> -->
+<!-- parent to child child to parent -->
+<div class="container">
+    <div class="row">
+        <div class="col-mb-3 mt-5">
+            <form>
+               <input type="text" class="form-control" id="name" name="text"
+               placeholder="Enter Name" (change)="data(text.value)" #text>
+              
+            </form>
+        </div>
+    </div>
+</div>
+<app-child [name1]="name" *ngIf="val"></app-child>
+<div class=" row justify-content-center">
+    <div class="col-md-6 text-center">
+<button class="btn btn-danger  "(click)="Stop1()">STOP DATA</button>
+</div>
+</div>
+<app-footer></app-footer>
