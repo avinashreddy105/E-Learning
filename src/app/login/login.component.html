@@ -17,14 +17,23 @@
                       formControlName="email" [ngClass]="{'is-invalid':isSubmit && f.email.errors}">
                      <p class="text-danger fw-bold" *ngIf=" isSubmit && f.email.errors">Enter Email</p>
                    </div>
-                   <div  class="mb-3 mt-3">
+                   <div class="mt-3mb-3">
+                    <label for="email" class="form-label">
+                      PASSWORD</label><span class="text-danger">*
+                     </span>
+                    <input [type]="type1" class="form-control is-invalid" placeholder="Enter Password" name="password"  formControlName="password"
+                    [ngClass] ="{'is-invalid':isSubmit && f.password.errors}">
+                    <button class="btn btn-primary mt-3" type="button" (click)="show()">SHOW</button>
+                    <button class="btn btn-danger mt-3 mx-2" type="button" (click)="hide()">HIDE</button>
+                  </div>
+                   <!-- <div  class="mb-3 mt-3">
                     <label for="password" class="form-label">
                     PASSWORD</label><span class="text-danger">*
                    </span>
                     <input type="password" class="form-control" class="form-control is-invalid" id="password" placeholder="Enter Password" name="password"
                       formControlName="password" [ngClass] ="{'is-invalid':isSubmit && f.password.errors}">
                      <p class="text-danger fw-bold" *ngIf="isSubmit && f.password.errors">Enter Password</p>
-                   </div>
+                   </div> -->
                    <p><a routerLink="/forgotpassword">Forgot your password?</a></p>
 
                    <button class="btn btn-primary" [disabled]="loginForm.invalid">LOGIN</button>

@@ -10,7 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
-import { FooterComponent } from '../footer/footer.component';
+import { Footer2Component } from './footer2/footer2.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { FooterComponent } from '../footer/footer.component';
 
     ProfileComponent,
     UserComponent,
-    FooterComponent
+    Footer2Component,
   ],
   imports: [
     CommonModule,

@@ -54,5 +54,13 @@ login(){
     })
 }
 // Login API integration //
+type1 ="password"
+
+show(){
+this.type1 ="text"
+}
+hide(){
+this.type1 ="password"
+}
 
 }

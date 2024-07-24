@@ -17,9 +17,9 @@ ngOnInit(): void {
   }
   this. email =localStorage.getItem("email")
 }
-logout(){
-  this.router.navigate(["/login"])
-  localStorage.clear()
-}
+// logout(){
+//   this.router.navigate(["/login"])
+//   localStorage.clear()
+// }
 
 }

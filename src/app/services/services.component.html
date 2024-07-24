@@ -1,26 +1,26 @@
 <app-header></app-header>
 <div class="container mt-4">
     <h3 class="text-center bg-primary text-white">SERVICES</h3>
-    <div class="row mt-5">
+    <div class="row mt-3">
         <div class=" col-md-4" *ngFor="let course of courses">
             <!-- NGFOR CONDITION EXAMPLE -->
             
-            <div class="card" >
+            <div class="card mt-3" >
                 <!-- ( *ngIf="course.name==='ANGULAR'"||course.name ==='REACT') -->
-                <img class="card-img-top" src="{{course.img}}" alt="Card image cap">
+                <img class="card-img-top" src="{{course.img}}" alt="Card image cap" style="height: 200px;">
 
                 <div class="card-body">
                     <h4 class="card-title">{{course.name}}</h4>
                     <div class="card-text">
                         <p>{{course.content}}</p>
                         <div class="text-center">
-                            <button class="btn   btn-info" >{{course.fee}}</button>
+                            <button class="btn btn-info">{{course.fee}}</button>
 
-                            <button class="btn btn-primary mx-2" >{{course.duration}}</button>
+                            <button class="btn btn-primary mx-2">{{course.duration}}</button>
                         </div>
                         <button class="btn w-100 btn-danger mt-3" (click)="add(course)">ADD TO CART</button>
                         <button class="btn w-100 btn-success mt-3" (click)="read()">READ MORE</button>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                     <div class="card-text">
                         <p>JavaScript is a scripting or programming language that allows you to implement complex features on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates.</p>
                         <button class="btn btn-primary">FEE:5000</button>
-                        <button class="btn btn-danger mx-2" >DURATION:20HS</button>
+                        <button class="btn btn-danger mx-2">DURATION:20HS</button>
                     </div>
                 </div>
             </div>
